@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>独立游戏FPS开发日志 | YI GAME STUDIO</title><meta name="keywords" content="Unity"><meta name="author" content="Serious Wission"><meta name="copyright" content="Serious Wission"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Version：1.11.78.42开发计划 1.取消主界面显示直接显示菜单界面 2.调整菜单界面 UI宽度 3.修复选择AK47枪械数据报错问题， 4.优化不同枪械各方面音效，增加子弹击中特效 5.修复乡村小镇地图内的集装箱GAME窗口不显示问题修复已知问题 增加玩家在瞄准时的音效 修复乡村小镇，荒野沙漠，欢乐游乐园材质丢失问题 优化枪焰的位置 优化枪械UI的显示效果，将枪械Sprite与枪械子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="独立游戏FPS开发日志">
+<meta property="og:url" content="http://hyh981006.github.io/2021/04/02/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8FFPS%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:site_name" content="YI GAME STUDIO">
+<meta property="og:description" content="Version：1.11.78.42开发计划 1.取消主界面显示直接显示菜单界面 2.调整菜单界面 UI宽度 3.修复选择AK47枪械数据报错问题， 4.优化不同枪械各方面音效，增加子弹击中特效 5.修复乡村小镇地图内的集装箱GAME窗口不显示问题修复已知问题 增加玩家在瞄准时的音效 修复乡村小镇，荒野沙漠，欢乐游乐园材质丢失问题 优化枪焰的位置 优化枪械UI的显示效果，将枪械Sprite与枪械子">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.zcool.cn/community/014ea658e484aba801219c777c8838.jpg@1280w_1l_2o_100sh.jpg">
+<meta property="article:published_time" content="2021-04-02T14:11:56.000Z">
+<meta property="article:modified_time" content="2021-07-01T10:12:34.087Z">
+<meta property="article:author" content="Serious Wission">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.zcool.cn/community/014ea658e484aba801219c777c8838.jpg@1280w_1l_2o_100sh.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://hyh981006.github.io/2021/04/02/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8FFPS%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Serious Wission","link":"链接: ","source":"来源: YI GAME STUDIO","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-01 18:12:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 学习</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.100font.com/"><i class="fa-fw fas fa-film"></i><span> 100font</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.diyiziti.com/list"><i class="fa-fw fas fa-book"></i><span> 第一字体</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.latexlive.com/"><i class="fa-fw fas fa-film"></i><span> LaTeX公式编辑器</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.processon.com/"><i class="fa-fw fas fa-gamepad"></i><span> processon</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.iconfont.cn/"><i class="fa-fw fas fa-book"></i><span> 阿里图标库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://id.photonengine.com/"><i class="fa-fw fas fa-film"></i><span> U3D PHOTON</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/index.html"><i class="fa-fw fas fa-gamepad"></i><span> U3D API</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://lua.ren/lua_guide/math-library/"><i class="fa-fw fas fa-book"></i><span> Lua 数学函数库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.element3ds.com/"><i class="fa-fw fas fa-film"></i><span> 微元素</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.mixamo.com/#/"><i class="fa-fw fas fa-book"></i><span> mixamo</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sm.ms/"><i class="fa-fw fas fa-book"></i><span> 网站图片生成器</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tool.oschina.net/commons?type=3"><i class="fa-fw fas fa-film"></i><span> 颜色对照表</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.ikan.ml/index.html"><i class="fa-fw fas fa-film"></i><span> Ikan影视</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.u5kk.com/pc/#/main/1/"><i class="fa-fw fas fa-film"></i><span> U5影视</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.471pk.com/"><i class="fa-fw fas fa-film"></i><span> 片库网</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.hobiao.net/"><i class="fa-fw fas fa-film"></i><span> 红标影院</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.zcool.cn/community/014ea658e484aba801219c777c8838.jpg@1280w_1l_2o_100sh.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YI GAME STUDIO</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 学习</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.100font.com/"><i class="fa-fw fas fa-film"></i><span> 100font</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.diyiziti.com/list"><i class="fa-fw fas fa-book"></i><span> 第一字体</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.latexlive.com/"><i class="fa-fw fas fa-film"></i><span> LaTeX公式编辑器</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.processon.com/"><i class="fa-fw fas fa-gamepad"></i><span> processon</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.iconfont.cn/"><i class="fa-fw fas fa-book"></i><span> 阿里图标库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://id.photonengine.com/"><i class="fa-fw fas fa-film"></i><span> U3D PHOTON</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2019.4/ScriptReference/index.html"><i class="fa-fw fas fa-gamepad"></i><span> U3D API</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://lua.ren/lua_guide/math-library/"><i class="fa-fw fas fa-book"></i><span> Lua 数学函数库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.element3ds.com/"><i class="fa-fw fas fa-film"></i><span> 微元素</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.mixamo.com/#/"><i class="fa-fw fas fa-book"></i><span> mixamo</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sm.ms/"><i class="fa-fw fas fa-book"></i><span> 网站图片生成器</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tool.oschina.net/commons?type=3"><i class="fa-fw fas fa-film"></i><span> 颜色对照表</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.ikan.ml/index.html"><i class="fa-fw fas fa-film"></i><span> Ikan影视</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.u5kk.com/pc/#/main/1/"><i class="fa-fw fas fa-film"></i><span> U5影视</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.471pk.com/"><i class="fa-fw fas fa-film"></i><span> 片库网</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.hobiao.net/"><i class="fa-fw fas fa-film"></i><span> 红标影院</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">独立游戏FPS开发日志</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-02T14:11:56.000Z" title="发表于 2021-04-02 22:11:56">2021-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-01T10:12:34.087Z" title="更新于 2021-07-01 18:12:34">2021-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity3d%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Unity3d基础知识</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="独立游戏FPS开发日志"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Version：1-11-78-42"><a href="#Version：1-11-78-42" class="headerlink" title="Version：1.11.78.42"></a>Version：1.11.78.42</h1><h2 id="开发计划"><a href="#开发计划" class="headerlink" title="开发计划"></a>开发计划</h2><ul>
+<li>1.取消主界面显示直接显示菜单界面</li>
+<li>2.调整菜单界面 UI宽度</li>
+<li>3.修复选择AK47枪械数据报错问题，</li>
+<li>4.优化不同枪械各方面音效，增加子弹击中特效</li>
+<li>5.修复乡村小镇地图内的集装箱GAME窗口不显示问题<h2 id="修复已知问题"><a href="#修复已知问题" class="headerlink" title="修复已知问题"></a>修复已知问题</h2></li>
+<li>增加玩家在瞄准时的音效</li>
+<li>修复乡村小镇，荒野沙漠，欢乐游乐园材质丢失问题</li>
+<li>优化枪焰的位置</li>
+<li>优化枪械UI的显示效果，将枪械Sprite与枪械子弹，枪械的名称融在一起</li>
+<li>增加子弹射到不同物体上，不同物体的反馈音效</li>
+<li>在主界面将枪械介绍进行融入</li>
+<li>优化玩家血量显示效果</li>
+<li>单人匹配房间制作进入倒计时，进行最后得细节打磨，增加4款枪械，增加枪械的局部贴图</li>
+<li>对加入房间列表进行最后得打磨，融入房间类型，房间编号，恢复在加入房间时可以自定义房间名称</li>
+<li>未来的单人联网不再大规模的升级扩展，只对设置面板做小型的增加与调整，对枪械的增加暂时停止</li>
+<li>对娱乐模式模式进行设计与制作，取消所谓的第三人称射击，改用全新的第一人称+暗黑场景+过场动画+局部爆炸效果（将第三人称的局部爆炸效果放到娱乐模式）</li>
+</ul>
+<p>2.初步设计方向为7把枪械，保证一把狙击枪，一把手枪，限量手雷（不再是一枚，而是多枚）</p>
+<h1 id="Version：1-12-126-88"><a href="#Version：1-12-126-88" class="headerlink" title="Version：1.12.126.88"></a>Version：1.12.126.88</h1><h2 id="修复已知问题-1"><a href="#修复已知问题-1" class="headerlink" title="修复已知问题"></a>修复已知问题</h2><ul>
+<li>本次进行局部的PUN2官方联机测试和本地端局域网测试，对已知问题进行了初步的总和与修改：</li>
+<li>修改了狙击枪M4A1的开镜时间，对每一把枪械的镜头校准进行了初步的优化升级，降低了85%的M4A1开镜时间，降低了75.4%的瞄准镜头拉伸时间，使整体了开枪效果更加流畅，舒爽。</li>
+<li>对整体的每局游戏的开启进行了优化升级，推出开局的地图的旋转效果，使整体的开局更加的流畅与通畅，方便整体的场景渲染，使整体场景渲染更加美观</li>
+<li>对每一把武器的伤害配比进行了调整，使用一套简单的算法进行伤害计算，保证伤害更加合理，计算方式：伤害值=枪械自身伤害值+额外临时伤害值-人物保护值，其中额外临时伤害值为随机数字。<h1 id="Version：1-13-86-54"><a href="#Version：1-13-86-54" class="headerlink" title="Version：1.13.86.54"></a>Version：1.13.86.54</h1><h2 id="修复问题"><a href="#修复问题" class="headerlink" title="修复问题"></a>修复问题</h2></li>
+<li>对游戏的性能进行了优化，取消了主场景的辅助建筑物的显示，修改为背景填充，整体的UI做了细节的调整；</li>
+<li>为了降低场景对CPU的渲染的工作量，取消了之前的场景所有建筑物所有都显示，采用了遮罩剔除的方式，只显示玩家摄像机所能看到的画面，其余进行隐藏，降低对渲染的消耗量；整体的帧率明显较上次有所提高30%；</li>
+<li>为了凸显出游戏的独立性，对光明辞决Logo进行了重新绘制，在每个地图的开始阶段，文字做了简单的双颜色文字渐变效果，使文字更加美观；</li>
+<li>由于UI3.0启动效果存在诸多Bug，UI的显示仍然采用2.0版本的显示效果，待UI3.0效果测试正常时在进行更多的UI层面的优化升级，根据目前UI3.0测试的UI显示效果方面性能消耗有所降低40%；</li>
+<li>优化了部分UI地图的UI图片，整合优化了选择地图的复杂度；</li>
+<li>开始部署辅助物品的设定，在乡村小镇地图中增加了爆炸油桶和车辆的损坏；玩家在打爆车辆时会产生车辆损坏的效果和持续的火焰（由于暂时功能无法批量生产，暂时全部为1）<h1 id="Version：1-14-46-11"><a href="#Version：1-14-46-11" class="headerlink" title="Version：1.14.46.11"></a>Version：1.14.46.11</h1><h2 id="修复已知问题-2"><a href="#修复已知问题-2" class="headerlink" title="修复已知问题"></a>修复已知问题</h2></li>
+<li>采用最简易便捷的帧率测试显示插件：Easy FPS Counter，调整了对帧率的校正时间；</li>
+<li>对枪械系统的细节进行了调整，在每把枪械的秀枪动作效果进行了添加；</li>
+<li>对热带雨林地图进行修改调整，关闭进入热带雨林地图的入口，待地图修改完毕之后再次开启；</li>
+<li>对地图与玩法进行了划分，将原有的乡村小镇，欢乐游乐园，荒野沙漠，极寒雪地划分到娱乐对抗模式，增加了生存竞技模式，增加了两个子模式，分别为无尽战争（暂定名）和僵尸来袭（暂定名），预计后期上线；</li>
+<li>对自定义按键进行设定，暂时设定为不可以进行自定义按键保存，W,S,A,D键无法修改，其他按键基本可改；</li>
+<li>修改了设置面板的灵敏度和枪械瞄准度的设置方式;<h1 id="Version-1-15-11-12"><a href="#Version-1-15-11-12" class="headerlink" title="Version 1.15.11.12"></a>Version 1.15.11.12</h1></li>
+<li>整体根据电脑性能部分升级为urp画面质量；</li>
+<li>生存挑战模式开始制作与测试，在保证游戏质量的情况下，采用probulider+poly（即使用自制场景）；</li>
+<li>取消玩家只能在游戏中才能选择复活后对枪械的选择的设定！同时可以选择枪械（玩家在游戏中同样也会调整，在复活后使用）；</li>
+<li>对游戏的画质进行划分，根据电脑性能降低或者调整游戏画质；</li>
+<li>修复在荒野沙漠的遮罩剔除方式对场景的建筑物材质丢失问题；</li>
+<li>游戏生成版本的项目直接对外开放，本游戏核心信息继续封闭只对外开放录制的视频，不对外开放项目源码</li>
+<li>根据电脑质量，增加相应的画面质量的修改；</li>
+<li>重新开启“毅游游戏工作室”的logo代入；</li>
+<li>完成对按键自定义的设置，并完成能够保存自定义按键修改数据；<h1 id="Version-1-16-12-78"><a href="#Version-1-16-12-78" class="headerlink" title="Version 1.16.12.78"></a>Version 1.16.12.78</h1><h2 id="开发简述"><a href="#开发简述" class="headerlink" title="开发简述"></a>开发简述</h2></li>
+<li>对枪械的UI进行显示调整;</li>
+<li>对游戏主界面进行重新搭建;</li>
+<li>由于起初的游戏制作预留不足，导致在升级到URP后导致莫名的Bug，显示效果无法达到预期效果，所以不会升级到URP;</li>
+<li>目前对乡村小镇和欢乐游乐园的优化工作已经完成，对乡村小镇的场景进行了PolyBrush的增加辅助树木和各种建筑辅助物;</li>
+<li>为了增加游戏的体验感，目前已经完成了在乡村小镇地图中的限时迷雾效果，在早上的4点钟到6点钟会在地图中显示轻微Fog，其他时间场景正常效果;</li>
+<li>由于增加枪械的工作量较大，加之要对增加的枪械的Bug进行测试，修复量较大，所以枪械的增加工作会有所推迟【目前已经完成的包括SCAR-L（冲锋枪），AWM（狙击枪）】;</li>
+<li>为了提高游戏的打击感和战斗效果，目前只开启乡村小镇和欢乐游乐园，其他地图全部进行调整;</li>
+<li>由于要修改的东西比较多，所谓该版本并没有录制视频;</li>
+</ul>
+<h1 id="Version-2-0-0-0"><a href="#Version-2-0-0-0" class="headerlink" title="Version 2.0.0.0"></a>Version 2.0.0.0</h1><h2 id="预计7月8日8时更新"><a href="#预计7月8日8时更新" class="headerlink" title="预计7月8日8时更新"></a>预计7月8日8时更新</h2><h3 id="普通更新"><a href="#普通更新" class="headerlink" title="普通更新"></a>普通更新</h3><ul>
+<li>修复在空对地导弹的无法实现伤害问题;</li>
+<li>对Logo的代入效果后的部分进行修改;</li>
+<li>对场景辅助音效增加，增加游戏的参与感;</li>
+<li>为了提升游戏的玩法与显示效果，目前对荒野沙漠，报废工厂，极寒沙漠，热带雨林四个地图下架，上架新版地图（度假乡村）;</li>
+<li>对玩家在PUN 2无法在20CCU的人数的限制以外，玩家无法在进入游戏的问题进行优化，对玩家的是否联网进行选择,为丰富游戏的玩法，增加单机游戏的主页面，会在目前的主页面之上增加一个主页面，目前的主页面为次主页面（联网主页面），暂定为联网/离线的切换;</li>
+<li>对游戏的地图UI进行优化，文字显示效果进行优化,地图的图标与文字进行优化;</li>
+<li>新版本的角色控制器和枪械系统正式上线，待7月8日8时将完成所有的新型枪械系统的所有枪械的数值调整和全新手感的体验;</li>
+<li>单机模式的玩法正式上线，并且对所有玩家进行测试，并且不会受到网络的相关影响，在游戏的玩法和设置上，有着独立的剧情设定，并且后期开发的模式与玩法将全部采用新版本的角色控制器和枪械系统(联机模式下的老版本角色控制器和枪械系统会逐步更新为新版的角色控制器和枪械系统)。</li>
+<li>增加训练营，并且训练营是独立的且离线，在训练营将对所有枪械和辅助工具进行提供使用，并且增加显示效果，在训练营中的玩家，将采用新版的角色控制器（联网模式将继续使用老版的角色控制器），玩家的状态共分为（站立，行走，奔跑，滑行，钩锁，攀爬，匍匐），为了突出训练营的效果，在训练营中的玩家，将体验到最新的游戏体验效果，并且在突出新的功能（地图除外），训练营将优先更新收集反馈意见</li>
+<li>新版的枪械系统也将同步更新到训练营（枪械的子弹将有更好的物理效果，对子弹的底层代码进行了优化，增加开枪后的子弹速度，子弹距离，子弹伤害，子弹反馈效果，子弹反馈音效）;</li>
+<li>新版本的角色控制器增加了HeadBob效果，人物移动更加真实;</li>
+<li>增加对断网时的提示语重新连接网络的面板;</li>
+<li>增加在第一次进入游戏时的CG动画;</li>
+<li>对部分界面的语言类型设置，可以在中文/英文进行切换;<h3 id="特殊更新"><a href="#特殊更新" class="headerlink" title="特殊更新"></a>特殊更新</h3></li>
+<li>加入<font color=#8552a1 face="宋体" ><strong>Photon Chat</strong> </font>插件，增加对大厅和局内文字交流的效果;<font color=#1fea39><strong>(已完成)</strong></font></li>
+<li>对<font color=#8552a1 face="宋体" ><strong>Photon Chat</strong></font>文字聊天系统的文字显示进行规范，加入<font color=Green face="宋体"><strong>敏感词汇</strong></font>的辨别，优化交流环境;<font color=#1fea39><strong>(已完成)</strong></font></li>
+<li>增加对枪械的皮肤的效果，后期提供多种皮肤的选择，前期枪械暂定为单一;<font color=#1fea39><strong>(已完成)</strong></font></li>
+</ul>
+<h2 id="游戏的下载地址："><a href="#游戏的下载地址：" class="headerlink" title="游戏的下载地址："></a>游戏的下载地址：</h2><p>【考虑到大家的**网盘下载速度问题，但是目前up本人暂时没有找到替代的网盘，所以暂时还是只能用这个网盘，大家可以打开网盘的闲时模式网速会有所上升】<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1fURlq46mqoDvatFSqfQZiA">https://pan.baidu.com/s/1fURlq46mqoDvatFSqfQZiA</a><br>提取码：h7ob 【2021/5/更新，有效期：永久】<br><img src="https://img3.jiemian.com/jiemian/original/20200521/159002978564985900_a700xH.jpg"></p>
+<hr>
+<h3 id="本游戏特别鸣谢"><a href="#本游戏特别鸣谢" class="headerlink" title="本游戏特别鸣谢"></a>本游戏特别鸣谢</h3><p>Bilibili Up主：CellStudio（底层基础框架)）<br>Bilibili Up主：CrockFang（底层基础框架）<br>Bilibili Up主：Unity官方（Unity 3d 编译器）<br>BilibliUp主： 鬼鬼鬼ii（FPS控制器思想与物理系统思想）<br>BilibliUp主：弦风课堂（UI框架）<br>BilibliUp主：M_Studio（部分思想）<br>BilibliUp主：无法停止奔跑的马（相关插件推荐）<br>BilibiliUp主：Lee哥的游戏开发加油站（相关素材推荐）<br>BilibiliUp主：BeaverJoe（相关思想）<br>BilibiliUp主：一唐老狮一（后期的热更新思想）<br>BilibiliUp主：狗子你怎么了（相关思想）<br>BilibiliUp主：班级文摘报（意见反馈）<br>BilibiliUp主：没用的阿博（意见反馈）<br>BilibiliUp主：凉凉的凉粉草（意见反馈）<br>BilibiliUp主：苍浪子FC（意见反馈）<br>哈尔滨信息工程学院 18级 天赐（深层思路）</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Serious Wission</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://hyh981006.github.io/2021/04/02/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8FFPS%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">http://hyh981006.github.io/2021/04/02/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8FFPS%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://hyh981006.github.io" target="_blank">YI GAME STUDIO</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity/">Unity</a></div><div class="post_share"><div class="social-share" data-image="https://img.zcool.cn/community/014ea658e484aba801219c777c8838.jpg@1280w_1l_2o_100sh.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/04/03/Unity-GameObject-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A7%AF%E7%B4%AF/"><img class="prev-cover" src="https://www.vrfocus.com/wp-content/uploads/2020/03/Unity_HDRP_example-1024x576.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Unity GameObject 知识点积累</div></div></a></div><div class="next-post pull-right"><a href="/2021/04/02/Unity%E9%80%80%E5%87%BA%E6%B8%B8%E6%88%8F/"><img class="next-cover" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1486741724,1446110792&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity退出游戏</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/04/03/Unity-GameObject-知识点积累/" title="Unity GameObject 知识点积累"><img class="cover" src="https://www.vrfocus.com/wp-content/uploads/2020/03/Unity_HDRP_example-1024x576.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-03</div><div class="title">Unity GameObject 知识点积累</div></div></a></div><div><a href="/2021/07/04/Lua-热更新/" title="lua热更新"><img class="cover" src="https://img1.qunarzz.com/travel/d7/1607/88/9eea4a31e363f49a.jpg_r_720x480x95_92bc67ce.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-04</div><div class="title">lua热更新</div></div></a></div><div><a href="/2021/04/04/Unity-Input类知识点积累/" title="Unity Input类知识点积累"><img class="cover" src="https://www.vrfocus.com/wp-content/uploads/2020/03/Unity_HDRP_example-1024x576.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-04</div><div class="title">Unity Input类知识点积累</div></div></a></div><div><a href="/2021/05/18/UnityAB包/" title="Unity热更新知识点"><img class="cover" src="https://iknow-pic.cdn.bcebos.com/b151f8198618367a021b7f8b2e738bd4b21ce5d2?x-bce-process%3Dimage%2Fresize%2Cm_lfit%2Cw_600%2Ch_800%2Climit_1%2Fquality%2Cq_85%2Fformat%2Cf_jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-18</div><div class="title">Unity热更新知识点</div></div></a></div><div><a href="/2021/04/02/Unity异步加载场景/" title="Unity异步加载场景"><img class="cover" src="https://img1.qunarzz.com/travel/d7/1607/88/9eea4a31e363f49a.jpg_r_720x480x95_92bc67ce.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-02</div><div class="title">Unity异步加载场景</div></div></a></div><div><a href="/2021/04/02/Unity退出游戏/" title="Unity退出游戏"><img class="cover" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1486741724,1446110792&fm=26&gp=0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-02</div><div class="title">Unity退出游戏</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Serious Wission</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hyh981006"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/hyh981006/hyh981006.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2813842071@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/404880132" target="_blank" title="bilibili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://www.jianshu.com/u/a5c5165fa2ee" target="_blank" title="jianshu"><i class="iconfont icon-heartbeat"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Welcome to the world of YiYou</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Version%EF%BC%9A1-11-78-42"><span class="toc-number">1.</span> <span class="toc-text">Version：1.11.78.42</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92"><span class="toc-number">1.1.</span> <span class="toc-text">开发计划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">修复已知问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version%EF%BC%9A1-12-126-88"><span class="toc-number">2.</span> <span class="toc-text">Version：1.12.126.88</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-1"><span class="toc-number">2.1.</span> <span class="toc-text">修复已知问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version%EF%BC%9A1-13-86-54"><span class="toc-number">3.</span> <span class="toc-text">Version：1.13.86.54</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E9%97%AE%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">修复问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version%EF%BC%9A1-14-46-11"><span class="toc-number">4.</span> <span class="toc-text">Version：1.14.46.11</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-2"><span class="toc-number">4.1.</span> <span class="toc-text">修复已知问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version-1-15-11-12"><span class="toc-number">5.</span> <span class="toc-text">Version 1.15.11.12</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version-1-16-12-78"><span class="toc-number">6.</span> <span class="toc-text">Version 1.16.12.78</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%AE%80%E8%BF%B0"><span class="toc-number">6.1.</span> <span class="toc-text">开发简述</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version-2-0-0-0"><span class="toc-number">7.</span> <span class="toc-text">Version 2.0.0.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E8%AE%A17%E6%9C%888%E6%97%A58%E6%97%B6%E6%9B%B4%E6%96%B0"><span class="toc-number">7.1.</span> <span class="toc-text">预计7月8日8时更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E6%9B%B4%E6%96%B0"><span class="toc-number">7.1.1.</span> <span class="toc-text">普通更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%9B%B4%E6%96%B0"><span class="toc-number">7.1.2.</span> <span class="toc-text">特殊更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="toc-number">7.2.</span> <span class="toc-text">游戏的下载地址：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E6%B8%B8%E6%88%8F%E7%89%B9%E5%88%AB%E9%B8%A3%E8%B0%A2"><span class="toc-number">7.2.1.</span> <span class="toc-text">本游戏特别鸣谢</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/07/04/Lua-%E7%83%AD%E6%9B%B4%E6%96%B0/" title="lua热更新"><img src="https://img1.qunarzz.com/travel/d7/1607/88/9eea4a31e363f49a.jpg_r_720x480x95_92bc67ce.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="lua热更新"/></a><div class="content"><a class="title" href="/2021/07/04/Lua-%E7%83%AD%E6%9B%B4%E6%96%B0/" title="lua热更新">lua热更新</a><time datetime="2021-07-04T07:41:10.000Z" title="发表于 2021-07-04 15:41:10">2021-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/18/UnityAB%E5%8C%85/" title="Unity热更新知识点"><img src="https://iknow-pic.cdn.bcebos.com/b151f8198618367a021b7f8b2e738bd4b21ce5d2?x-bce-process%3Dimage%2Fresize%2Cm_lfit%2Cw_600%2Ch_800%2Climit_1%2Fquality%2Cq_85%2Fformat%2Cf_jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity热更新知识点"/></a><div class="content"><a class="title" href="/2021/05/18/UnityAB%E5%8C%85/" title="Unity热更新知识点">Unity热更新知识点</a><time datetime="2021-05-18T12:13:15.000Z" title="发表于 2021-05-18 20:13:15">2021-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/16/Unity%E6%89%A9%E5%B1%95%E7%BC%96%E8%BE%91%E5%99%A8/" title="Unity扩展编辑器"><img src="http://image.biaobaiju.com/uploads/20190705/23/1562339581-itwnpNUWCS.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity扩展编辑器"/></a><div class="content"><a class="title" href="/2021/05/16/Unity%E6%89%A9%E5%B1%95%E7%BC%96%E8%BE%91%E5%99%A8/" title="Unity扩展编辑器">Unity扩展编辑器</a><time datetime="2021-05-16T08:22:59.000Z" title="发表于 2021-05-16 16:22:59">2021-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/22/VisualStudio%E4%BF%AE%E6%94%B9%E8%83%8C%E6%99%AF%E5%9B%BE/" title="VisualStudio修改背景图"><img src="http://5b0988e595225.cdn.sohucs.com/images/20180523/c62ad215393649d99106d743e408e52f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VisualStudio修改背景图"/></a><div class="content"><a class="title" href="/2021/04/22/VisualStudio%E4%BF%AE%E6%94%B9%E8%83%8C%E6%99%AF%E5%9B%BE/" title="VisualStudio修改背景图">VisualStudio修改背景图</a><time datetime="2021-04-22T06:22:15.000Z" title="发表于 2021-04-22 14:22:15">2021-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/19/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" title="资源分享"><img src="http://ku.178.com/upload/images/201211/19/02/1353292187-2835.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="资源分享"/></a><div class="content"><a class="title" href="/2021/04/19/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" title="资源分享">资源分享</a><time datetime="2021-04-19T00:39:54.000Z" title="发表于 2021-04-19 08:39:54">2021-04-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Serious Wission</div><div class="framework-info"><a>每一份等待与期盼，只是为了下一次重逢，江河无恙，人还在</a><span class="footer-separator">|</span></div><div class="footer_custom_text"><p><a style="margin-inline:5px" target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a><a style="margin-inline:5px" target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a><a style="margin-inline:5px" target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a><a style="margin-inline:5px" target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a><a style="margin-inline:5px" target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a><a style="margin-inline:5px" target="_blank" href="https://github.com/hyh981006/hyh981006.github.io/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a><a style="margin-inline:5px" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"> <!-- 挂载容器 --> <div class="card-content"> <div class="item-headline"> <i class="fas fa-clock fa-spin"></i> <span>那年今日</span> </div> <div id="history-baidu" style="height: 100px;overflow: hidden"> <!-- 挂载器 --> <div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"> <div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div> </div> </div> </div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><script data-pjax>function electric_clock_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
+                console.log('已挂载electric_clock')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            electric_clock_injector_config()
+        } </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax  src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"></script>
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?zfour";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="zfour";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
